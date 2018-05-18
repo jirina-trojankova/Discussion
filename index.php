@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,11 +10,11 @@
 <h3>Hi and wellcome to our discussion...</h3>
 <p>Have any comments?</p> 
 <h2>Let us know!</h2> 
-<form method="post" action="">  
-<label for="text">Name</label><br />
+<form method="post" action="form_handler.php">  
+<label for="name">Name</label><br />
 <input name="name" type="text" placeholder="Your name"><br />
-<label for="message">Message</label><br />
-<textarea name="message" rows="10" cols="30"placeholder="Your comment commes here..."></textarea><br />
+<label for="text">Message</label><br />
+<textarea name="text" rows="10" cols="30"placeholder="Your comment commes here..."></textarea><br />
 <input type="submit" value="Send">
 
 <?php
