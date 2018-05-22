@@ -16,8 +16,10 @@ query($query, [
     $text
 ]);
 
+
+
 //redirects back to where it came
-header("Location: index2.php");
+header("Location: index1.php");
 exit();
 
 
