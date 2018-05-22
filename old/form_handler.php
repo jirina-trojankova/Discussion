@@ -1,7 +1,7 @@
 <?php
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 require 'database.php';
-
-var_dump($_POST);
 
 //gather data from POST
 $nick = isset($_POST['name']) ?  $_POST['name'] : '';
@@ -14,12 +14,11 @@ $query = "
 INSERT INTO `discussion` (`nick`, `text`)
 VALUES (?, ?)
 ";
-var_dump($query);
 
  
  //function query from database
-
-query($query, [
+//inserts query from above and should print data
+db_query($query, [
     $nick,
     $text
 ]);
@@ -27,6 +26,3 @@ query($query, [
 //redirect back to where it camo
 header("Location: index.php");
 exit();
-
-
-?>
