@@ -9,33 +9,14 @@ $database = "main";
 
 $db = new PDO("mysql:host=".$servername.";dbname=main; charset=utf8", $username, $password);
 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-
-function getData($db) {
-    $stmt = $db->query("SELECT * FROM discussion ORDER BY `post_id` ASC");
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($stmt);
- }
   
- //then much later
- try {
-    getData($db);
- } catch(PDOException $e) {
-    //handle me.
-}
-getData($db);
-echo'<hr />';
-
-$stmt = $db->query('SELECT * FROM discussion');
-$row_count = $stmt->rowCount();
-echo $row_count.' rows selected';
-
-echo'<hr />';
-
-$stmt = $db->query('SELECT * FROM discussion ORDER BY `post_id` ASC');
+$stmt = $db->query('SELECT * FROM discussion ORDER BY `post_id` DESC');
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//use $results
-var_dump($results);
+//use $results..
+
+//number of posts
+$row_count = $stmt->rowCount();
+echo $row_count.' posts altogether';
 echo'<hr />';
 ?>
 <!DOCTYPE html>
