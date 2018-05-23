@@ -2,13 +2,11 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 require 'database.php   ';
-
 $database = "main";
 $pdo = connect($database);
 
 $stmt = $pdo->query('SELECT * FROM discussion ORDER BY `post_id` DESC');
 $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//use $results..
 
 $row_count = $stmt->rowCount();
 ?>
